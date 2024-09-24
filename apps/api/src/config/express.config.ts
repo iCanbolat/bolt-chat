@@ -6,13 +6,8 @@ import compression from "compression";
 import helmet from "helmet";
 
 // Router
-import { AuthenticationRouter } from "../routes/auth/auth.routes";
 import { UserRouter } from "../routes/user/user.routes";
-import { StudentRouter } from '../routes/student/student.routes';
 
-import CronConfig from "./cron.config";
-
-const { cronStart } = CronConfig();
 //#endregion
 
 //#region Configuration
@@ -49,14 +44,12 @@ App.get("/", (req, res) => {
 	res.status(200).send("Hello");
 });
 
-// Authentication
-App.use("/api/auth", AuthenticationRouter);
+
 
 // Users
 App.use("/api/user", UserRouter);
 
-// Student
-App.use('/api/student', StudentRouter);
+
 //#endregion
 
 export default App;
