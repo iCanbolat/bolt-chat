@@ -1,5 +1,8 @@
 # BOLT AI CHATBOT
 
+# Pine UI Boilerplate
+# BOLT AI CHATBOT
+
 # Pine UI BOILERPLATE
 
 [![Express JS](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)]()
