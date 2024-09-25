@@ -1,6 +1,9 @@
 # BOLT AI CHATBOT
+![Bolt Chatbot - Opera 25 09 2024 18_37_11](https://github.com/user-attachments/assets/5a2e5bfb-3c57-4e1b-be24-fd90c9c933bf)
 
-####Clone repo,
+Generates ice-breaker question about cats, then keeps conversation based on user answers.
+
+#### Clone repo
 #### Install the dependencies
 
 ```bash
