@@ -1,4 +1,6 @@
-# Pine UI BOILERPLATE
+# BOLT AI CHATBOT
+
+# Pine UI Boilerplate
 
 [![Express JS](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)]()
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)]()
@@ -10,5 +12,3 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)]()
 
 A **comprehensive** and **user-friendly boilerplate**, designed to expedite the development process of **MERN Stack Dashboards**, providing developers with an extensive range of **components** and **features**.
-
-# BOLT AI CHATBOT
