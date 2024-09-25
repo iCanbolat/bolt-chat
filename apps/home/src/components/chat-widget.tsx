@@ -12,6 +12,7 @@ const ChatWidget: React.FC = () => {
 	const [messages, setMessages] = useState<ChatMessage[]>([]);
 	const [input, setInput] = useState<string>("");
 	const [loading, setLoading] = useState<boolean>(false);
+	const [botLoading, setBotLoading] = useState<boolean>(false); // Loading state for model's response
 
 	const lastMessageEnd = useRef<HTMLDivElement>(null);
 
@@ -44,6 +45,7 @@ const ChatWidget: React.FC = () => {
 		setMessages((prev) => [...prev, userMessage]);
 		setInput("");
 
+		setBotLoading(true);
 		try {
 			const response = await axios.post<NextQuestionResponse>(
 				import.meta.env.VITE_API_URL + "chatbot/next-question",
@@ -52,12 +54,15 @@ const ChatWidget: React.FC = () => {
 					userResponse: userMessage.text
 				}
 			);
+
 			setMessages((prev) => [
 				...prev,
 				{ role: "model", text: response.data.data.question }
 			]);
 		} catch (error) {
 			console.error("Error sending message:", error);
+		} finally {
+			setBotLoading(false);
 		}
 	};
 
@@ -100,13 +105,25 @@ const ChatWidget: React.FC = () => {
 						</div>
 					</div>
 				))}
+
+				{botLoading && (
+					<div className="flex justify-start">
+						<div className="  text-black ml-3 rounded-lg w-fit">
+							<div className="flex items-center justify-center space-x-2 animate-bounce">
+								<div className="h-4 w-4 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+								<div className="h-4 w-4 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+								<div className="h-4 w-4 bg-gray-400 rounded-full animate-bounce"></div>
+							</div>
+						</div>
+					</div>
+				)}
 				<div ref={lastMessageEnd} />
 			</div>
 
 			<div className="relative w-full">
 				<input
 					type="text"
-					disabled={messages.length === 0}
+					disabled={messages.length === 0 || loading || botLoading}
 					value={input}
 					onChange={(e) => setInput(e.target.value)}
 					onKeyDown={handleKeyDown}
@@ -115,7 +132,7 @@ const ChatWidget: React.FC = () => {
 				/>
 				<button
 					onClick={handleSendMessage}
-					disabled={messages.length === 0}
+					disabled={messages.length === 0 || loading || botLoading}
 					className="absolute inset-y-0 right-0 flex items-center pr-3 text-blue-500"
 				>
 					<FiSend size={20} />
