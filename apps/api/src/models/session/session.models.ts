@@ -1,6 +1,6 @@
 import { model, Schema } from "mongoose";
-import ISession from "../../interface/session/session.interface";
-
+import { ISession } from '../../interface/session/session.interface';
+ 
 const sessionSchema = new Schema({
 	sessionId: { type: String, required: true, unique: true },
 	questions: [{ type: String }],
@@ -8,6 +8,6 @@ const sessionSchema = new Schema({
 	createdAt: { type: Date, default: Date.now },
 	updatedAt: { type: Date, default: Date.now }
 });
-const SessionModel = model<ISession>("User", sessionSchema);
+const SessionModel = model<ISession>("Session", sessionSchema);
 
 export { SessionModel };

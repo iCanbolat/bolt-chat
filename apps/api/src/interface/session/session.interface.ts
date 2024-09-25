@@ -1,6 +1,6 @@
 import { Document } from "mongoose";
 
-interface ISession extends Document {
+export interface ISession extends Document {
 	sessionId: string;
 	questions: string[];
 	answers: string[];
@@ -8,4 +8,20 @@ interface ISession extends Document {
 	updatedAt: Date;
 }
 
-export default ISession;
+export interface IStartSessionRequest {
+  sessionId: string;
+}
+
+export interface INextQuestionRequest {
+  sessionId: string;
+  userResponse: string;
+}
+
+export interface IStartSessionResponse {
+  question: string;
+}
+
+export interface INextQuestionResponse {
+  question: string;
+}
+ 

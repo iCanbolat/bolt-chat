@@ -6,7 +6,7 @@ import compression from "compression";
 import helmet from "helmet";
 
 // Router
-import { UserRouter } from "../routes/user/user.routes";
+import { ChatbotRouter } from "../routes/chatbot/chatbot.routes";
 
 //#endregion
 
@@ -44,11 +44,8 @@ App.get("/", (req, res) => {
 	res.status(200).send("Hello");
 });
 
-
-
 // Users
-App.use("/api/user", UserRouter);
-
+App.use("/api/chatbot", ChatbotRouter);
 
 //#endregion
 
