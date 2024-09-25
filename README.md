@@ -1,6 +1,37 @@
 # BOLT AI CHATBOT
+-Clone repo,
+#### Install the dependencies
+
+```bash
+  npm install
+```
 
 
+#### Setup .env
+Get Free API Key from  [https://aistudio.google.com/app/apikey]([url](https://aistudio.google.com/app/apikey))
+
+```
+  Create .env file in apps/api folder and Add the following
+  PORT=3001
+  MONGO_DB=yourMongoDbConnection/
+  MONGO_DB_SCHEMA=mongoDbSchema
+  API_KEY=GeminiAI APIKEY
+```
+```
+  Create .env file in apps/home folder and Add the following
+  VITE_API_URL=http://localhost:3001/api/
+```
+
+#### Run dev
+
+```
+in root folder of porject run
+npm run dev
+```
+
+
+
+Thanks..
 # Pine UI Boilerplate
 [![Express JS](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)]()
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)]()
