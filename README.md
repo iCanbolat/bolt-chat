@@ -1,5 +1,6 @@
 # BOLT AI CHATBOT
--Clone repo,
+
+####Clone repo,
 #### Install the dependencies
 
 ```bash
@@ -25,7 +26,7 @@ Get Free API Key from  [https://aistudio.google.com/app/apikey]([url](https://ai
 #### Run dev
 
 ```
-in root folder of porject run
+in root folder of project run
 npm run dev
 ```
 
